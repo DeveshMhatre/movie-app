@@ -1,0 +1,66 @@
+.search {
+  position: relative;
+
+  height: calc(100vh - 5rem - 1.2rem);
+  width: 100%;
+  padding-top: 8.7rem;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  &__play {
+    width: 17rem;
+    height: 16rem;
+  }
+
+  &__form {
+    margin-top: 8.7rem;
+    width: 23.7rem;
+    height: 3.6rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--text {
+      width: 17.6rem;
+      height: 3.6rem;
+      border: .1rem solid $dark-color;
+      border-radius: 1rem;
+      padding: 0 .5rem;
+
+      background-color: $light-color;
+      font-family: $body-font;
+      font-size: 1.4rem;
+      color: $dark-color;
+    }
+
+    &--btn {
+      border: none;
+
+      background: transparent;
+
+      cursor: pointer;
+
+      svg {
+        width: 4rem;
+        height: 3.6rem;
+
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__popcorn {
+    position: absolute;
+    left: 50%;
+    bottom: -6.4rem;
+    margin-left: calc(-15.8rem / 2);
+
+    width: 15.8rem;
+    height: 13.8rem;
+  }
+}
