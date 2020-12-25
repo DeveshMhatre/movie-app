@@ -62,5 +62,20 @@
 
     width: 15.8rem;
     height: 13.8rem;
+
+    animation-name: popCorn;
+    animation-duration: 700ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes popCorn {
+  0% {
+    transform: translateY(calc(15.8rem - 6.4rem));
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
