@@ -12,18 +12,23 @@ const Search = props => {
   const [query, setQuery] = useState('');
 
 
+  // Update query state as new input is received from user
   const queryOnChange = e => {
     setQuery(e.target.value);
   }
 
+  // Trigger this function when submit button is clicked
   const btnOnClick = async e => {
     e.preventDefault();
 
+    // To keep the function from unnecessarily running if input field is empty
     if (query !== '') {
+      // So the MoviePage component receives the user query
       props.history.push({
         pathname: '/movie-found',
         state: { query: query }
       });
+      // Clear the input field at the end
       setQuery('');
     }
   }

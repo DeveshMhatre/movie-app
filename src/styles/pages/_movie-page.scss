@@ -25,9 +25,45 @@
 
 .results {
   width: 100%;
+  padding: 0 3.2rem 0 3.3rem;
   min-height: calc(100vh - 5rem - 1.2rem);
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &__poster {
+    margin-top: 7rem;
+    width: 22.3rem;
+    height: 36.3rem;
+  }
+
+  &__title {
+    margin-top: 3.8rem;
+
+    font-family: $heading-font;
+    font-size: 2.4rem;
+  }
+
+  &__summary {
+    margin-top: 3.2rem;
+
+    font-family: $body-font;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  &__dir {
+    @extend .results__summary;
+    font-size: 1.4rem;
+  }
+
+  &__cast {
+    @extend .results__summary;
+    font-size: 1.2rem;
+  }
+
+  &__btn {
+    margin: 2.4rem 0;
+  }
 }
