@@ -1,0 +1,49 @@
+.not-found {
+  position: relative;
+
+  width: 100%;
+  height: calc(100vh - 5rem - 1.2rem);
+  max-height: calc(100vh - 5rem - 1.2rem);
+
+  overflow: hidden;
+
+  &__msg {
+    margin: 9.5rem 2.6rem 0 2.7rem;
+
+    font-family: $heading-font;
+    font-size: 1.8rem;
+  }
+
+  &__img {
+    position: absolute;
+    left: -9.4rem;
+    right: -3.8rem;
+    bottom: -6rem;
+
+    width: 49.2rem;
+    height: 36.6rem;
+
+    animation-name: animateImg;
+    animation-duration: 1000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes animateImg {
+  0% {
+    transform: translateX(calc(49.2rem - 9.4rem));
+  }
+
+  50% {
+    transform: translateX(-5rem);
+  }
+
+  75% {
+    transform: translateX(5rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

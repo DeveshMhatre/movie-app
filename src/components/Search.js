@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useState } from 'react';
+
 import Header from './Header';
 
 import { ReactComponent as Popcorn } from '../images/popcorn.svg';
@@ -7,17 +9,22 @@ import { ReactComponent as Play } from '../images/play.svg';
 import { ReactComponent as SearchBtn } from '../images/search.svg';
 
 const Search = props => {
+  const [query, setQuery] = useState('');
 
-  const queryOnChange = () => {
-    let query = document.querySelector('.search__form--text').value;
-    props.onChange(query);
+
+  const queryOnChange = e => {
+    setQuery(e.target.value);
   }
 
-  const btnOnClick = e => {
+  const btnOnClick = async e => {
     e.preventDefault();
-    if (props.query !== '') {
-      alert(props.query);
-      props.onChange('');
+
+    if (query !== '') {
+      props.history.push({
+        pathname: '/movie-found',
+        state: { query: query }
+      });
+      setQuery('');
     }
   }
 
@@ -36,9 +43,11 @@ const Search = props => {
           <input
             type="text"
             className="search__form--text"
-            value={props.query}
+            value={query}
             onChange={queryOnChange}
-            placeholder="Enter title, IMDb ID&hellip;"/>
+            placeholder="Enter title, IMDb ID&hellip;"
+            autoFocus />
+
           <button
             type="submit"
             className="search__form--btn"

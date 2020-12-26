@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { useState } from 'react';
-
 import {
   BrowserRouter as Router,
-  Route
+  Switch,
+  Route,
 } from 'react-router-dom';
 
 import Search from './Search';
@@ -12,29 +11,24 @@ import MoviePage from './MoviePage';
 import NotFound from './NotFound';
 
 const App = () => {
-  const [query, setQuery] = useState('');
 
   return (
-    <main
-      id="app">
+    <main id="app">
       <Router>
 
-        <Route
-          path="/search-results">
-          <MoviePage />
-        </Route>
+        <Switch>
+          <Route
+            path="/movie-found"
+            component={MoviePage} />
 
-        <Route
-          path="/not-found">
-          <NotFound />
-        </Route>
+          <Route
+            path="/movie-not-found"
+            component={NotFound} />
 
-        <Route
-          exact path="/">
-          <Search 
-            query={query}
-            onChange={setQuery} />
-        </Route>
+          <Route
+            exact path="/"
+            component={Search} />
+        </Switch>
 
       </Router>
     </main>

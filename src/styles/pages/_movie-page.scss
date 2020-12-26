@@ -1,0 +1,33 @@
+.results-loading {
+  width: 100%;
+  min-height: calc(100vh - 5rem - 1.2rem);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__spinner {
+    width: 8rem;
+    height: 8rem;
+    border: .8rem solid transparent;
+    border-radius: 50%;
+    border-top-color: $accent-color;
+
+    animation: loadingSpinner 1000ms linear infinite;
+  }
+}
+
+@keyframes loadingSpinner {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.results {
+  width: 100%;
+  min-height: calc(100vh - 5rem - 1.2rem);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

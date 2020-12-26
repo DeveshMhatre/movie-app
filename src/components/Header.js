@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import { ReactComponent as Logo } from '../images/logo.svg';
 import { ReactComponent as Back } from '../images/back.svg';
@@ -17,9 +17,9 @@ const Header = props => {
   else {
     return (
       <header className="header-back">
-        <Link to='/'>
-          <Back className="header-back__back" />
-        </Link>
+        <Back
+          className="header-back__back"
+          onClick={() => props.history.push('/')}/>
         <Logo className="header-back__logo" />
         <div className="header-bakc__blank"></div>
       </header>
@@ -27,4 +27,4 @@ const Header = props => {
   }
 };
 
-export default Header;
+export default withRouter(Header);
