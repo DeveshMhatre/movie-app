@@ -2,26 +2,26 @@
   position: relative;
 
   width: 100%;
-  height: calc(100vh - 5rem - 1.2rem);
-  max-height: calc(100vh - 5rem - 1.2rem);
+  height: 91vh;
+  max-height: 91vh;
 
   overflow: hidden;
 
   &__msg {
-    margin: 9.5rem 2.6rem 0 2.7rem;
+    margin: 13vh 9vw 0 9vw;
 
     font-family: $heading-font;
-    font-size: 1.8rem;
+    font-size: 5vw;
   }
 
   &__img {
     position: absolute;
-    left: -9.4rem;
-    right: -3.8rem;
-    bottom: -6rem;
+    left: -27vw;
+    right: -13vw;
+    bottom: -10vh;
 
-    width: 49.2rem;
-    height: 36.6rem;
+    width: 140vw;
+    height: 50vh;
 
     animation-name: animateImg;
     animation-duration: 1000ms;
@@ -32,18 +32,41 @@
 
 @keyframes animateImg {
   0% {
-    transform: translateX(calc(49.2rem - 9.4rem));
+    transform: translateX(calc(140vw - 13vw));
   }
 
   50% {
-    transform: translateX(-5rem);
+    transform: translateX(-10vw);
   }
 
   75% {
-    transform: translateX(5rem);
+    transform: translateX(3vw);
   }
 
   100% {
     transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .not-found {
+    width: 100%;
+    height: 88vh;
+    max-height: 88vh;
+
+    &__msg {
+      margin: 30vh 45vw 0 8vw;
+
+      font-size: 3vw;
+    }
+
+    &__img {
+      left: 5vw;
+      right: 0;
+      bottom: -24vh;
+
+      width: 105vw;
+      height: 95vh;
+    }
   }
 }

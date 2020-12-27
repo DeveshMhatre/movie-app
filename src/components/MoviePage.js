@@ -67,7 +67,7 @@ const MoviePage = props => {
           </h3>
           <p
             className="results__summary">
-            {movieData.Plot}
+            Summary: {movieData.Plot}
           </p>
           {/* If director prop is N/A, render writer's name */}
           <p

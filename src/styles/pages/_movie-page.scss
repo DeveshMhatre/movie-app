@@ -1,6 +1,6 @@
 .results-loading {
   width: 100%;
-  min-height: calc(100vh - 5rem - 1.2rem);
+  min-height: 91vh;
 
   display: flex;
   justify-content: center;
@@ -25,45 +25,130 @@
 
 .results {
   width: 100%;
-  padding: 0 3.2rem 0 3.3rem;
-  min-height: calc(100vh - 5rem - 1.2rem);
+  padding: 0 9vw 0 9vw;
+  min-height: 91vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   &__poster {
-    margin-top: 7rem;
-    width: 22.3rem;
-    height: 36.3rem;
+    margin-top: 10vh;
+    width: 60vw;
+    height: 47vh;
   }
 
   &__title {
-    margin-top: 3.8rem;
+    margin-top: 6vh;
 
     font-family: $heading-font;
-    font-size: 2.4rem;
+    font-size: 7.5vw;
+    text-align: center;
   }
 
   &__summary {
-    margin-top: 3.2rem;
+    margin-top: 4vh;
 
     font-family: $body-font;
-    font-size: 1.8rem;
+    font-size: 5.2vw;
     text-align: center;
   }
 
   &__dir {
-    @extend .results__summary;
-    font-size: 1.4rem;
+    margin-top: 2vh;
+
+    font-family: $body-font;
+    font-size: 4vw;
+    text-align: center;
   }
 
   &__cast {
-    @extend .results__summary;
-    font-size: 1.2rem;
+    margin-top: 2vh;
+
+    font-family: $body-font;
+    font-size: 3.5vw;
+    text-align: center;
   }
 
   &__btn {
-    margin: 2.4rem 0;
+    margin: 2.5vh 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .results {
+    width: 100vw;
+    padding: 6vh 8vw 6vh 8vw;
+    height: 88vh;
+    max-height: 88vh;
+    min-height: 0;
+
+    display: grid;
+    grid-template-columns: 25vw 40vw;
+    grid-template-rows: 41vh 25vh 10vh;
+
+    grid-column-gap: 19vw;
+
+    grid-template-areas:
+      'poster title'
+      'poster info'
+      'btn .';
+
+    &__poster {
+      grid-area: poster;
+      justify-self: center;
+      align-self: center;
+
+      margin: 0 auto;
+      width: 20vw;
+      height: 90%;
+    }
+
+    &__title {
+      grid-area: title;
+      align-self: start;
+
+      margin: 0;
+
+      font-size: max(12px, 3vw);
+      text-align: left;
+    }
+
+    &__summary {
+      grid-area: title;
+      align-self: end;
+
+      margin: 0;
+
+      font-size: 2vw;
+      text-align: left;
+    }
+
+    &__dir {
+      grid-area: info;
+      align-self: center;
+
+      margin: 0;
+      margin-bottom: 2vw;
+
+      font-size: 2vw;
+      text-align: left;
+    }
+
+    &__cast {
+      grid-area: info;
+      align-self: end;
+
+      margin: 0;
+
+      font-size: 1.5vw;
+      text-align: left;
+    }
+
+    &__btn {
+      grid-area: btn;
+
+      margin: 0 auto;
+    }
   }
 }
