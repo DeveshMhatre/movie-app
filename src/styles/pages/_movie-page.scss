@@ -32,6 +32,8 @@
   flex-direction: column;
   align-items: center;
 
+  animation: transPageInverse 300ms ease-in;
+
   &__poster {
     margin-top: 10vh;
     width: 60vw;
@@ -150,5 +152,14 @@
 
       margin: 0 auto;
     }
+  }
+}
+
+@keyframes transPageInverse {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

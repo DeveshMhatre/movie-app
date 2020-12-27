@@ -7,6 +7,8 @@
 
   overflow: hidden;
 
+  animation: transPageInverse 300ms ease-in;
+
   &__msg {
     margin: 13vh 9vw 0 9vw;
 
@@ -30,24 +32,6 @@
   }
 }
 
-@keyframes animateImg {
-  0% {
-    transform: translateX(calc(140vw - 13vw));
-  }
-
-  50% {
-    transform: translateX(-10vw);
-  }
-
-  75% {
-    transform: translateX(3vw);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
 @media screen and (min-width: 1024px) {
   .not-found {
     width: 100%;
@@ -68,5 +52,32 @@
       width: 105vw;
       height: 95vh;
     }
+  }
+}
+
+@keyframes animateImg {
+  0% {
+    transform: translateX(calc(140vw - 13vw));
+  }
+
+  50% {
+    transform: translateX(-10vw);
+  }
+
+  75% {
+    transform: translateX(3vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes transPageInverse {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

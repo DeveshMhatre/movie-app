@@ -8,6 +8,8 @@
   align-items: center;
   flex-direction: column;
 
+  animation: transPage 300ms ease-in;
+
   overflow: hidden;
 
   &__play {
@@ -121,5 +123,14 @@
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes transPage {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
