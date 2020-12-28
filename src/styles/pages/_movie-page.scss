@@ -17,6 +17,12 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .results-loading {
+    min-height: 88vh;
+  }
+}
+
 @keyframes loadingSpinner {
   to {
     transform: rotate(1turn);
@@ -86,11 +92,9 @@
     min-height: 0;
 
     display: grid;
-    grid-template-columns: 25vw 40vw;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 41vh 25vh 10vh;
-
-    grid-column-gap: 19vw;
-
+    justify-content: space-around;
     grid-template-areas:
       'poster title'
       'poster info'
@@ -102,7 +106,7 @@
       align-self: center;
 
       margin: 0 auto;
-      width: 20vw;
+      width: 70%;
       height: 90%;
     }
 
