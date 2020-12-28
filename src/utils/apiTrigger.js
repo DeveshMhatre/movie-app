@@ -1,4 +1,4 @@
-const apiUrl = `http://www.omdbapi.com/?apikey=cff50ade&`;
+const apiUrl = `https://www.omdbapi.com/?apikey=cff50ade&`;
 
 const apiTrigger = async query => {
   query = query.toLowerCase(); // because the api accept lower case queries
