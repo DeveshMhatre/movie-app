@@ -14,7 +14,8 @@ const App = () => {
 
   return (
     <main id="app">
-      <Router>
+      <Router
+        basename={process.env.PUBLIC_URL}>
 
         <Switch>
           <Route
